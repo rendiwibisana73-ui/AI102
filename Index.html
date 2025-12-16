@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Sistem Pakar Diagnosa Penyakit Kambing — Forward Chaining + Best Match</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">SP</div>
+            <div>
+                <h1>Sistem Pakar Diagnosa Penyakit Kambing</h1>
+                <p class="lead">Metode Forward Chaining + Best-Match Rule</p>
+            </div>
+        </header>
+
+        <!-- LEFT SIDE -->
+        <aside class="card">
+            <h3>Daftar Gejala</h3>
+            <p style="font-size:13px;color:var(--muted)">Pilih gejala yang dialami kambing:</p>
+            <div class="symptom-list" id="symptomList"></div>
+
+            <div class="controls">
+                <button id="diagnoseBtn" class="btn">Diagnosa</button>
+                <button id="clearBtn" class="btn secondary">Bersihkan</button>
+            </div>
+        </aside>
+
+        <!-- RIGHT SIDE -->
+        <section class="card">
+            <h3>Working Memory</h3>
+            <div id="workingMemory" style="background:#f1f5f9;padding:10px;border-radius:10px;min-height:40px">
+                Belum ada input.
+            </div>
+
+            <h3 style="margin-top:20px">Forward Chaining Steps</h3>
+            <div id="steps" class="steps"></div>
+
+            <h3 style="margin-top:20px">Kesimpulan</h3>
+            <div id="conclusionBox" class="conclusion none">Belum ada kesimpulan.</div>
+
+            <div id="recommendations" class="recommend" style="margin-top:12px"></div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

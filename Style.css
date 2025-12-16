@@ -1,0 +1,182 @@
+:root {
+    --bg: #f6f8fb;
+    --card: #ffffff;
+    --accent: #2b6cb0;
+    --muted: #6b7280;
+    --ok: #169873;
+    --warn: #d97706;
+    --radius: 12px;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(180deg, var(--bg), #eef2f7);
+    padding: 28px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    gap: 20px;
+}
+
+header {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 10px;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent), #6ea8ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    box-shadow: 0 6px 18px rgba(43, 108, 176, 0.25);
+    font-size: 18px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 20px;
+}
+
+p.lead {
+    margin: 0;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.card {
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 16px;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+}
+
+.symptom-list {
+    height: 720px;
+    overflow: auto;
+    padding-right: 6px;
+}
+
+.symptom-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.symptom-item:hover {
+    background: #f9fbff;
+}
+
+input[type=checkbox] {
+    width: 18px;
+    height: 18px;
+    margin-top: 3px;
+}
+
+label {
+    font-size: 14px;
+}
+
+.codes {
+    margin-left: auto;
+    color: var(--muted);
+    font-size: 12px;
+    padding-top: 2px;
+}
+
+.controls {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.btn {
+    background: var(--accent);
+    color: white;
+    border: 0;
+    padding: 10px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn.secondary {
+    background: #eef2fb;
+    color: var(--accent);
+}
+
+.steps {
+    overflow: auto;
+    height: 420px;
+    padding: 8px;
+    border-radius: 10px;
+    background: #fbfdff;
+    border: 1px dashed rgba(12, 16, 28, 0.04);
+}
+
+.step {
+    padding: 8px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    background: white;
+    border: 1px solid rgba(12, 16, 28, 0.06);
+}
+
+.match {
+    color: var(--ok);
+    font-weight: 700;
+}
+
+.nomatch {
+    color: var(--muted);
+}
+
+.conclusion {
+    padding: 14px;
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+.conclusion.ok {
+    background: #ecfdf5;
+    color: var(--ok);
+}
+
+.conclusion.none {
+    background: #fff7ed;
+    color: var(--warn);
+}
+
+.recommend {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.45;
+}
+
+@media (max-width: 980px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .symptom-list {
+        height: 420px;
+    }
+}
